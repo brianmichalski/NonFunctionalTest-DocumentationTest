@@ -80,6 +80,6 @@ with open(csv_output_file, "w", newline="") as csvfile:
     for rowPage, rowLinks in visited_links.items():
         row = [rowPage]
         for colPage, colLinks in visited_links.items():
-            row.append(1 if rowPage in colLinks else 0)
+            row.append(1 if colPage in rowLinks else 0)
 
         csv_writer.writerow(row)
