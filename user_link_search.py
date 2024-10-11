@@ -63,4 +63,12 @@ extractLinks(base_url, main_page, visited_links)
 print(" " * 100, end="\r"),
 
 links_swap = {v: k for k, v in visited_links.items()}
-searchLink(links_swap, 'how to')
+
+while True:
+    search_input = input("Enter your query (or press Enter to stop): ")
+    if search_input == "":
+        break
+    
+    print(f"Results for '{search_input}'")
+    searchLink(visited_links, search_input)
+    print('\n'*2)
