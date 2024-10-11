@@ -37,7 +37,7 @@ def extractPageTree(base_url, current_page, tree_node, visited_links):
     links = soup.find_all("a")
     # regex filter for capturing all pages in the first level of the site
     # it avoids javascript() links, inner refs (#), external links, etc.
-    regex = r"^\/page((\/[\w+]+){1,})"
+    regex = r"^\/page((\/[\w+\-]+){1,})"
     m = ""
     new_pages = []
     for current_page in links:
